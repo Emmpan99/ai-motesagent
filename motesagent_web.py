@@ -301,7 +301,7 @@ with st.sidebar:
     st.header("⚙️ Inställningar")
     engine = st.radio("AI-hjärna", ["GPT (OpenAI)", "Regelbaserad"], index=0)
     model = st.selectbox("GPT-modell", ["gpt-4o-mini", "gpt-3.5-turbo-0125"], index=0)
-    api_key = st.text_input("OpenAI API-nyckel", type="password", placeholder="sk-...")
+    api_key = st.secrets["OPENAI_API_KEY"]
 
 uploaded = st.file_uploader("Ladda upp mötesanteckningar", type=["txt", "docx", "pdf"])
 
